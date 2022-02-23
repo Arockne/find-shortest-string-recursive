@@ -1,5 +1,24 @@
+
+//i
+  //array of strings
+//o
+  //shortest string that comes first in the list
+//e
+  //array will have a min length of one
+//c
+  //must use recursion
 function findShortestStringRecursive(arr) {
-  // type your code here
+  if (arr.length === 1) {
+    return arr[0]
+  }
+
+  if (arr[0].length > arr[1].length) {
+    arr = arr.slice(1)
+  } else {
+    arr = [arr[0], ...arr.slice(2)]
+  }
+
+  return findShortestStringRecursive(arr)
 }
 
 if (require.main === module) {
